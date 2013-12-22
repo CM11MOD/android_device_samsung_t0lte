@@ -14,12 +14,17 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/samsung/t0lte/full_t0lte.mk)
 
+# Prebuilt
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/samsung/t0lte/prebuilt/system,system)
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := t0lte
 PRODUCT_NAME := cm_t0lte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := GT-N7105
 PRODUCT_MANUFACTURER := samsung
+PRODUCT_LOCALES := zh_CN zh_TW en_US
 
 # Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=t0lte TARGET_DEVICE=t0lte BUILD_FINGERPRINT="samsung/t0ltexx/t0lte:4.1.2/JZO54K/N7105XXDLL4:user/release-keys" PRIVATE_BUILD_DESC="t0ltexx-user 4.1.2 JZO54K N7105XXDLL4 release-keys"
