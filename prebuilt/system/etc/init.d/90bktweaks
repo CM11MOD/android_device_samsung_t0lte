@@ -1,0 +1,27 @@
+#!/system/bin/sh
+
+# 自訂數值 Variable
+
+busybox=/system/xbin/busybox
+
+busybox mount -o remount,rw /system
+
+
+# SD卡讀取提速 [sd card speed boost]
+if [ -e /sys/devices/virtual/bdi/179:0/read_ahead_kb ]; then
+    echo "1024" > /sys/devices/virtual/bdi/179:0/read_ahead_kb
+fi
+
+# Touch Wake: (觸屏喚醒：0＝默認關閉)
+# 增加系統的延遲值, 在自動關屏後段短時間內可以點擊屏幕再次返回桌面. 注意, 可能需要使用第三方軟件把鎖屏功能關閉.
+# 多少會增加一些耗電， 用電源鍵關屏的條件下無效
+echo "1" > /sys/class/misc/touchwake/enabled
+echo "45000" >/sys/class/misc/touchwake/delay
+
+# Enable Dynamic Sync
+echo "1" /sys/kernel/dyn_fsync/Dyn_fsync_active
+
+#RQ_Affinity
+for b in /sys/block/*; do echo 1 > $b/queue/rq_affinity; done
+
+busybox mount -o remount,ro /system
