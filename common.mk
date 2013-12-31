@@ -69,7 +69,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     Stk \
-    SamsungServiceMode
+    SamsungServiceMode \
+    DeviceSettings
 
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
