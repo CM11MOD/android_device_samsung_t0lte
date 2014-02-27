@@ -156,12 +156,12 @@ int SensorBase::sspEnable(const char* sensorname, int sensorvalue, int en)
     if(sensorvalue == SSP_ACCEL && !en) {
         //ALOGD("SensorBase: Resetting sensors");
         for(int i; i < 6; i++){
-	  newvalue = oldvalue - ssp_sensors[i];
-	  //ALOGD("SensorBase: newvalue: %i ",newvalue);
-	  sspWrite(newvalue);
-	}
+        newvalue = oldvalue - ssp_sensors[i];
+        //ALOGD("SensorBase: newvalue: %i ",newvalue);
+        sspWrite(newvalue);
+    }
         sspWrite('\0');
-	return 0;
+        return 0;
     } else if(en) {
         newvalue = oldvalue + sensorvalue;
     } else {
@@ -181,12 +181,12 @@ int SensorBase::sspWrite(int sensorvalue)
     fd = open(SSP_DEVICE_ENABLE, O_RDWR);
     if (fd >= 0) {
         err = write(fd, buf, sizeof(buf));
-	ret = 0;
+    ret = 0;
     } else {
         ALOGI("%s: error writing to file", __func__);
-	ret = -1;
+    ret = -1;
     }
-    
+
     close(fd);
     return ret;
 }
