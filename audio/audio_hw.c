@@ -807,9 +807,7 @@ static void select_output_device(struct m0_audio_device *adev)
 
 static void select_input_device(struct m0_audio_device *adev)
 {
-    int input_device = AUDIO_DEVICE_BIT_IN | adev->in_device;
-
-    switch(input_device) {
+    switch(adev->in_device) {
         case AUDIO_DEVICE_IN_BUILTIN_MIC:
             ALOGD("%s: AUDIO_DEVICE_IN_BUILTIN_MIC", __func__);
             break;
