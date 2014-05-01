@@ -37,6 +37,9 @@ else
 TARGET_KERNEL_CONFIG := slim_t0lte_defconfig
 endif
 
+TARGET_GCC_VERSION_AND := LINARO
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/t0lte/rootdir/fstab.smdk4x12
 RECOVERY_FSTAB_VERSION := 2
