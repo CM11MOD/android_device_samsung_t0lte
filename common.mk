@@ -16,6 +16,15 @@
 
 LOCAL_PATH := device/samsung/t0lte
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/samsung/t0lte/zImage
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel \
+
 # Overlay
 ifeq ($(TARGET_VOICE_TECH), cdma)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-cdma
