@@ -37,6 +37,9 @@ else
 TARGET_KERNEL_CONFIG := slim_t0lte_defconfig
 endif
 
+TARGET_PREBUILT_KERNEL := device/samsung/t0lte/zImage
+HAS_PREBUILT_KERNEL := true
+
 TARGET_GCC_VERSION_AND := LINARO
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 
