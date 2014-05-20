@@ -49,6 +49,9 @@ COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=32
 # ODEX optimization
 WITH_DEXPREOPT := true
 
+# Camera Hal Support
+TARGET_PROVIDES_CAMERA_HAL := true
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/t0lte/rootdir/fstab.smdk4x12
 RECOVERY_FSTAB_VERSION := 2
