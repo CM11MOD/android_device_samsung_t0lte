@@ -44,13 +44,16 @@ TARGET_GCC_VERSION_AND := LINARO
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 
 # Enable PLD prefetch support and 32 bit cacheline flag
-COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=32
+# COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=32
 
 # ODEX optimization
 WITH_DEXPREOPT := true
 
 # Camera Hal Support
 TARGET_PROVIDES_CAMERA_HAL := true
+
+# External apps on SD
+TARGET_EXTERNAL_APPS = sdcard1
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/t0lte/rootdir/fstab.smdk4x12
