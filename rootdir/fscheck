@@ -1,0 +1,24 @@
+#!/sbin/bb/busybox ash
+# osm0sis @ xda-developers
+
+bb=/sbin/bb/busybox;
+data=/dev/block/platform/*/*/by-name/userdata;
+device=t0lte;
+
+# check partition filesystem
+getfs() { $bb blkid $1 | $bb cut -d\" -f4; }
+
+case $1 in
+  mvfstab)
+    # use the data partition filesystem to move in the correct fstab
+    fstype=`getfs $data`;
+    $bb mv -f /fstab-$fstype.$device /fstab.$device;
+    $bb rm -f /fstab-*;
+  ;;
+  setprops)
+    # set filesystem type properties for external use - system mount (toolbox) required
+    setprop ro.fs.data `getfs $data`;
+  ;;
+esac;
+
+
