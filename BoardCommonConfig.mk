@@ -40,7 +40,7 @@ endif
 TARGET_PREBUILT_KERNEL := device/samsung/t0lte/zImage
 HAS_PREBUILT_KERNEL := true
 
-TARGET_GCC_VERSION_AND := 4.8-sm
+TARGET_GCC_VERSION_AND := 4.8-linaro
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 
 # Enable PLD prefetch support and 32 bit cacheline flag
