@@ -47,7 +47,7 @@ TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=32
 
 # ODEX optimization
-WITH_DEXPREOPT := true
+# WITH_DEXPREOPT := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/t0lte/rootdir/fstab.smdk4x12
