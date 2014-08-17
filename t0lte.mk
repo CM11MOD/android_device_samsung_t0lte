@@ -30,6 +30,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/lpm.rc:root/lpm.rc \
     $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc
 
+# F2FS filesystem
+PRODUCT_PACKAGES += \
+        mkfs.f2fs \
+        fsck.f2fs \
+        fibmap.f2fs \
+        f2fstat
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
