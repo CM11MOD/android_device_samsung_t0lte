@@ -59,6 +59,11 @@ PRODUCT_PACKAGES += \
     Nfc \
     Tag
 
+
+# Prebuilt
+PRODUCT_COPY_FILES += \
+$(call find-copy-subdir-files,*,device/samsung/t0lte/prebuilt/system,system)
+
 PRODUCT_COPY_FILES += \
     packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
