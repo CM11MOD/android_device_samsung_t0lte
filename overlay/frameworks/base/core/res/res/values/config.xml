@@ -162,4 +162,6 @@
     <!-- Boolean to enable Stylus gestures -->
     <bool name="config_stylusGestures">true</bool>
 
+    <!-- Enable translucent lockscreen-->
+    <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 </resources>
